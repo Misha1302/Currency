@@ -1,7 +1,7 @@
-﻿using UnityEngine;
-
-namespace UI
+﻿namespace UI
 {
+    using UnityEngine;
+
     public class ResourcesUICreator : MonoBehaviour
     {
         [SerializeField] private UIResourceInitializer resourcePrefab;

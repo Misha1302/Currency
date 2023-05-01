@@ -310,6 +310,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amountText: {fileID: 4268617404505954208}
+  increaseButton: {fileID: 7679075817899818238}
+  decreaseButton: {fileID: 3076163618805189880}
   stringFormat: '{0}: {1:0.}'
 --- !u!1 &7127937119318221085
 GameObject:
