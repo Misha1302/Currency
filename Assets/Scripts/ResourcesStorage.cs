@@ -7,17 +7,7 @@ public class ResourcesStorage : MonoBehaviour
     private readonly Dictionary<ResourceType, float> _resources = new();
     public Action<ResourceType, float> ResourceChangedEvent;
 
-    private void Start()
-    {
-        if (Service<ResourcesStorage>.Instance != null)
-            throw new InvalidOperationException("This class was created earlier");
-
-        Service<ResourcesStorage>.Instance = this;
-
-        InitResources();
-    }
-
-    private void InitResources()
+    public void InitResources()
     {
         var resourceTypes = (ResourceType[])Enum.GetValues(typeof(ResourceType));
         foreach (var type in resourceTypes)
