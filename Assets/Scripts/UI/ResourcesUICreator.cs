@@ -1,7 +1,7 @@
-﻿namespace UI
-{
-    using UnityEngine;
+﻿using UnityEngine;
 
+namespace UI
+{
     public class ResourcesUICreator : MonoBehaviour
     {
         [SerializeField] private UIResourceInitializer resourcePrefab;
@@ -10,7 +10,7 @@
         [SerializeField] private Vector2 startPos;
         [SerializeField] private Vector2 offset;
 
-        private void Start()
+        public void CreateUI(ResourcesStorage resources)
         {
             var currentPos = startPos;
             var canvasInstance = Instantiate(canvasPrefab);
@@ -18,7 +18,7 @@
             foreach (var resourceType in resourceTypes)
             {
                 var resourceInstance = Instantiate(resourcePrefab);
-                resourceInstance.Init(canvasInstance, currentPos, resourceType);
+                resourceInstance.Init(canvasInstance, currentPos, resourceType, resources);
                 currentPos += offset;
             }
         }
